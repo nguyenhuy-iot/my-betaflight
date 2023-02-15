@@ -1,0 +1,251 @@
+defaults nosave
+
+
+# version
+# Betaflight / STM32F411 (S411) 4.2.8 Feb 15 2021 / 12:09:04 (101738d8e) MSP API: 1.43
+# config: manufacturer_id: MTKS, board_name: MATEKF411RX, version: ee671311, date: 2019-10-16T11:49:37Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name MATEKF411RX
+manufacturer_id MTKS
+mcu_id 003b000f3437511930303630
+signature 
+
+# name: LuanNSF
+
+# resources
+resource MOTOR 1 B07
+resource MOTOR 2 B08
+resource MOTOR 3 B10
+resource MOTOR 4 B06
+resource SERIAL_RX 1 NONE
+resource CAMERA_CONTROL 1 A09
+resource PINIO 1 A10
+
+# timer
+timer A08 AF1
+# pin A08: TIM1 CH1 (AF1)
+timer B01 AF2
+# pin B01: TIM3 CH4 (AF2)
+
+# dma
+dma pin A08 0
+# pin A08: DMA2 Stream 6 Channel 0
+dma pin B01 0
+# pin B01: DMA1 Stream 2 Channel 5
+
+# feature
+feature -AIRMODE
+feature TELEMETRY
+feature LED_STRIP
+
+# beeper
+beeper -GYRO_CALIBRATED
+beeper -RX_LOST
+beeper -RX_LOST_LANDING
+beeper -DISARMING
+beeper -ARMING
+beeper -ARMING_GPS_FIX
+beeper -BAT_CRIT_LOW
+beeper -BAT_LOW
+beeper -GPS_STATUS
+beeper -RX_SET
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -READY_BEEP
+beeper -DISARM_REPEAT
+beeper -ARMED
+beeper -SYSTEM_INIT
+beeper -ON_USB
+beeper -BLACKBOX_ERASE
+beeper -CRASH_FLIP
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+beeper -RC_SMOOTHING_INIT_FAIL
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# serial
+serial 1 2048 115200 57600 0 115200
+
+# led
+led 0 0,0::C:2
+led 1 1,0::C:2
+
+# mode_color
+mode_color 6 1 13
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 900 1300 0 0
+aux 2 2 1 1300 1700 0 0
+aux 3 13 2 1300 1700 0 0
+aux 4 35 2 1700 2100 0 0
+
+# rxrange
+rxrange 0 987 2011
+rxrange 1 987 2011
+rxrange 2 987 2011
+rxrange 3 987 2011
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 1
+vtxtable powerlabels 25
+
+# master
+set gyro_lowpass2_hz = 375
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 250
+set dyn_notch_min_hz = 125
+set dyn_notch_max_hz = 350
+set dyn_lpf_gyro_min_hz = 300
+set dyn_lpf_gyro_max_hz = 750
+set acc_calibration = 78,-236,478,1
+set mag_hardware = NONE
+set baro_hardware = NONE
+set min_check = 1010
+set max_check = 1990
+set rc_interp_ch = T
+set rc_smoothing_derivative_type = OFF
+set rc_smoothing_auto_smoothness = 0
+set fpv_mix_degrees = 30
+set rx_spi_protocol = FRSKY_D
+set blackbox_device = NONE
+set dshot_idle_value = 500
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set align_board_roll = 180
+set align_board_yaw = -90
+set bat_capacity = 300
+set vbat_max_cell_voltage = 440
+set vbat_min_cell_voltage = 250
+set vbat_warning_cell_voltage = 320
+set current_meter = NONE
+set vbat_scale = 112
+set beeper_dshot_beacon_tone = 5
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_sbas_mode = AUTO
+set deadband = 1
+set yaw_deadband = 1
+set runaway_takeoff_prevention = OFF
+set osd_warn_esc_fail = OFF
+set osd_warn_core_temp = OFF
+set osd_vbat_pos = 2081
+set osd_rssi_pos = 194
+set osd_tim_2_pos = 2423
+set osd_flymode_pos = 2391
+set osd_throttle_pos = 321
+set osd_crosshairs_pos = 237
+set osd_craft_name_pos = 2401
+set osd_warnings_pos = 2345
+set osd_stat_bbox = OFF
+set osd_stat_bb_no = OFF
+set osd_stat_max_g_force = ON
+set osd_stat_max_fft = ON
+set scheduler_optimize_rate = ON
+set vtx_band = 4
+set vtx_channel = 4
+set vtx_power = 1
+set vtx_freq = 5800
+set vcd_video_system = NTSC
+set frsky_spi_tx_id = 4,233
+set frsky_spi_offset = -46
+set frsky_spi_bind_hop_data = 234,232,230,228,226,224,222,221,218,216,214,212,210,208,206,204,202,200,198,196,194,192,190,188,186,184,182,180,178,176,174,172,170,168,166,164,162,160,158,156,154,152,150,148,146,144,142,255,255,255
+set camera_control_key_delay = 200
+set camera_control_internal_resistance = 99
+set camera_control_button_resistance = 125,110,90,75,20
+set pinio_box = 40,255,255,255
+set rcdevice_init_dev_attempts = 4
+set gyro_1_sensor_align = CW90
+set gyro_1_align_yaw = 900
+set gyro_2_spibus = 0
+set name = LuanNSF
+
+profile 0
+
+# profile 0
+set dyn_lpf_dterm_min_hz = 105
+set dyn_lpf_dterm_max_hz = 255
+set dterm_lowpass2_hz = 225
+set anti_gravity_gain = 1000
+set iterm_relax = OFF
+set yaw_lowpass_hz = 100
+set throttle_boost = 0
+set p_pitch = 76
+set i_pitch = 99
+set d_pitch = 75
+set f_pitch = 0
+set p_roll = 69
+set i_roll = 94
+set d_roll = 68
+set f_roll = 0
+set p_yaw = 75
+set i_yaw = 99
+set f_yaw = 0
+set horizon_level_strength = 30
+set level_limit = 25
+set horizon_tilt_effect = 80
+set horizon_tilt_expert_mode = ON
+set d_min_roll = 0
+set d_min_pitch = 0
+set d_min_boost_gain = 25
+set d_min_advance = 0
+
+profile 1
+
+# profile 1
+set f_pitch = 0
+set f_roll = 0
+set f_yaw = 0
+
+profile 2
+
+# profile 2
+set f_pitch = 0
+set f_roll = 0
+set f_yaw = 0
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 95
+set pitch_rc_rate = 95
+set yaw_rc_rate = 95
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 50
+set tpa_rate = 45
+set tpa_breakpoint = 1550
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
