@@ -426,11 +426,11 @@ vtxtable powervalues 1 0 2 3 4
 vtxtable powerlabels 25 PIT 100 200 400
 
 # vtx
-vtx 0 3 0 0 1 900 1400
-vtx 1 3 0 0 4 1500 2100
-vtx 2 0 0 0 0 900 900
-vtx 3 0 0 0 0 900 900
-vtx 4 0 0 0 0 900 900
+vtx 0 3 0 0 2 900 1100
+vtx 1 3 0 0 1 1100 1400
+vtx 2 3 0 0 3 1400 1575
+vtx 3 3 0 0 4 1575 1875
+vtx 4 3 0 0 5 1875 2100
 vtx 5 0 0 0 0 900 900
 vtx 6 0 0 0 0 900 900
 vtx 7 0 0 0 0 900 900
@@ -614,7 +614,7 @@ set imu_process_denom = 2
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
 set gps_provider = UBLOX
-set gps_sbas_mode = AUTO
+set gps_sbas_mode = NONE
 set gps_auto_config = ON
 set gps_auto_baud = ON
 set gps_ublox_mode = AIRBORNE
@@ -816,12 +816,12 @@ set rate_6pos_switch = OFF
 set cpu_overclock = 108MHZ
 set pwr_on_arm_grace = 5
 set enable_stick_arming = OFF
-set vtx_band = 0
-set vtx_channel = 0
-set vtx_power = 4
+set vtx_band = 5
+set vtx_channel = 1
+set vtx_power = 3
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_softserial_alt = OFF
-set vtx_freq = 0
+set vtx_freq = 5658
 set vtx_pit_mode_freq = 0
 set vtx_halfduplex = ON
 set vcd_video_system = AUTO
@@ -1043,4 +1043,4 @@ set pitch_level_expo = 0
 # end the command batch
 batch end
 
-#  
+# 
