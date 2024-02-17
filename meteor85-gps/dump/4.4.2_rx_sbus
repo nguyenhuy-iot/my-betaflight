@@ -357,10 +357,10 @@ mode_color 7 0 3
 aux 0 0 0 1600 2100 0 0
 aux 1 1 1 900 1300 0 0
 aux 2 2 1 1300 1700 0 0
-aux 3 6 2 1300 1700 0 0
+aux 3 46 2 1700 2100 0 0
 aux 4 13 2 1700 2100 0 0
-aux 5 35 2 1700 2100 0 0
-aux 6 0 0 900 900 0 0
+aux 5 35 2 900 1200 0 0
+aux 6 37 3 900 1050 0 0
 aux 7 0 0 900 900 0 0
 aux 8 0 0 900 900 0 0
 aux 9 0 0 900 900 0 0
@@ -444,7 +444,7 @@ rxfail 2 a
 rxfail 3 h
 rxfail 4 h
 rxfail 5 s 1100
-rxfail 6 h
+rxfail 6 s 1900
 rxfail 7 h
 rxfail 8 h
 rxfail 9 h
@@ -553,12 +553,12 @@ set motor_poles = 14
 set motor_output_reordering = 0,1,2,3,4,5,6,7
 set thr_corr_value = 0
 set thr_corr_angle = 800
-set failsafe_delay = 15
+set failsafe_delay = 150
 set failsafe_off_delay = 10
 set failsafe_throttle = 1000
 set failsafe_switch_mode = STAGE1
-set failsafe_throttle_low_delay = 100
-set failsafe_procedure = DROP
+set failsafe_throttle_low_delay = 300
+set failsafe_procedure = GPS-RESCUE
 set failsafe_recovery_delay = 10
 set failsafe_stick_threshold = 30
 set align_board_roll = 0
@@ -614,11 +614,11 @@ set imu_process_denom = 2
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
 set gps_provider = UBLOX
-set gps_sbas_mode = NONE
+set gps_sbas_mode = AUTO
 set gps_auto_config = ON
 set gps_auto_baud = ON
 set gps_ublox_mode = AIRBORNE
-set gps_ublox_use_galileo = OFF
+set gps_ublox_use_galileo = ON
 set gps_set_home_point_once = OFF
 set gps_use_3d_speed = OFF
 set gps_sbas_integrity = OFF
@@ -640,7 +640,7 @@ set gps_rescue_throttle_max = 1700
 set gps_rescue_throttle_hover = 1275
 set gps_rescue_sanity_checks = RESCUE_SANITY_FS_ONLY
 set gps_rescue_min_sats = 8
-set gps_rescue_allow_arming_without_fix = OFF
+set gps_rescue_allow_arming_without_fix = ON
 set gps_rescue_throttle_p = 15
 set gps_rescue_throttle_i = 15
 set gps_rescue_throttle_d = 20
@@ -651,7 +651,7 @@ set gps_rescue_yaw_p = 20
 set deadband = 0
 set yaw_deadband = 0
 set yaw_control_reversed = OFF
-set pid_process_denom = 2
+set pid_process_denom = 1
 set runaway_takeoff_prevention = ON
 set runaway_takeoff_deactivate_delay = 500
 set runaway_takeoff_deactivate_throttle_percent = 20
@@ -795,7 +795,7 @@ set osd_profile = 2
 set osd_profile_1_name = -
 set osd_profile_2_name = -
 set osd_profile_3_name = -
-set osd_gps_sats_show_hdop = OFF
+set osd_gps_sats_show_hdop = ON
 set osd_displayport_device = AUTO
 set osd_rcchannels = -1,-1,-1,-1
 set osd_camera_frame_width = 24
@@ -818,7 +818,7 @@ set pwr_on_arm_grace = 5
 set enable_stick_arming = OFF
 set vtx_band = 5
 set vtx_channel = 1
-set vtx_power = 3
+set vtx_power = 2
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_softserial_alt = OFF
 set vtx_freq = 5658
@@ -910,9 +910,9 @@ set box_user_2_name = -
 set box_user_3_name = -
 set box_user_4_name = -
 
-profile 0
+profile 1
 
-# profile 0
+# profile 1
 set profile_name = -
 set dterm_lpf1_dyn_min_hz = 75
 set dterm_lpf1_dyn_max_hz = 150
@@ -952,11 +952,11 @@ set throttle_boost = 5
 set throttle_boost_cutoff = 15
 set p_pitch = 47
 set i_pitch = 84
-set d_pitch = 46
+set d_pitch = 52
 set f_pitch = 125
 set p_roll = 45
 set i_roll = 80
-set d_roll = 40
+set d_roll = 46
 set f_roll = 120
 set p_yaw = 45
 set i_yaw = 80
@@ -974,8 +974,8 @@ set abs_control_error_limit = 20
 set abs_control_cutoff = 11
 set use_integrated_yaw = OFF
 set integrated_yaw_relax = 200
-set d_min_roll = 30
-set d_min_pitch = 34
+set d_min_roll = 34
+set d_min_pitch = 39
 set d_min_yaw = 0
 set d_max_gain = 37
 set d_max_advance = 20
@@ -1003,7 +1003,7 @@ set level_race_mode = OFF
 set simplified_pids_mode = RPY
 set simplified_master_multiplier = 100
 set simplified_i_gain = 100
-set simplified_d_gain = 100
+set simplified_d_gain = 115
 set simplified_pi_gain = 100
 set simplified_dmax_gain = 100
 set simplified_feedforward_gain = 100
