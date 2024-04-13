@@ -199,15 +199,14 @@ feature -AIRMODE
 feature -RX_SPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
-feature GPS
+feature RX_SERIAL
 feature OSD
 feature AIRMODE
-feature RX_SPI
 feature ANTI_GRAVITY
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 0 2 115200 57600 0 115200
+serial 0 64 115200 57600 0 115200
 serial 1 2048 115200 57600 0 115200
 
 # mixer
@@ -355,7 +354,7 @@ mode_color 7 0 3
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 900 1300 0 0
 aux 2 2 1 1300 1700 0 0
-aux 3 27 3 1600 2100 0 0
+aux 3 6 2 1300 1700 0 0
 aux 4 13 2 1700 2100 0 0
 aux 5 35 2 1700 2100 0 0
 aux 6 0 0 900 900 0 0
@@ -484,11 +483,11 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 25
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = 85,-7,25,1
+set acc_calibration = -135,53,34,1
 set mid_rc = 1500
 set min_check = 1050
 set max_check = 2000
-set rssi_channel = 0
+set rssi_channel = 9
 set rssi_src_frame_errors = OFF
 set rssi_scale = 100
 set rssi_offset = 0
@@ -504,7 +503,7 @@ set rc_smoothing_throttle_cutoff = 0
 set rc_smoothing_debug_axis = ROLL
 set fpv_mix_degrees = 0
 set max_aux_channels = 14
-set serialrx_provider = CRSF
+set serialrx_provider = SBUS
 set serialrx_inverted = OFF
 set sbus_baud_fast = OFF
 set crsf_use_negotiated_baud = OFF
@@ -521,7 +520,7 @@ set adc_vrefint_calibration = 0
 set adc_tempsensor_calibration30 = 0
 set adc_tempsensor_calibration110 = 0
 set blackbox_sample_rate = 1/4
-set blackbox_device = SPIFLASH
+set blackbox_device = NONE
 set blackbox_disable_pids = OFF
 set blackbox_disable_rc = OFF
 set blackbox_disable_setpoint = OFF
@@ -547,11 +546,11 @@ set use_unsynced_pwm = OFF
 set motor_pwm_protocol = DSHOT300
 set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
-set motor_poles = 12
+set motor_poles = 9
 set motor_output_reordering = 0,1,2,3,4,5,6,7
 set thr_corr_value = 0
 set thr_corr_angle = 800
-set failsafe_delay = 15
+set failsafe_delay = 30
 set failsafe_off_delay = 10
 set failsafe_throttle = 1000
 set failsafe_switch_mode = STAGE1
@@ -789,7 +788,7 @@ set osd_sys_warnings_pos = 234
 set osd_sys_vtx_temp_pos = 119
 set osd_sys_fan_speed_pos = 234
 set osd_stat_bitmask = 14124
-set osd_profile = 3
+set osd_profile = 2
 set osd_profile_1_name = -
 set osd_profile_2_name = -
 set osd_profile_3_name = -
@@ -908,9 +907,9 @@ set box_user_2_name = -
 set box_user_3_name = -
 set box_user_4_name = -
 
-profile 0
+profile 3
 
-# profile 0
+# profile 3
 set profile_name = -
 set dterm_lpf1_dyn_min_hz = 75
 set dterm_lpf1_dyn_max_hz = 150
@@ -948,16 +947,16 @@ set pidsum_limit_yaw = 400
 set yaw_lowpass_hz = 100
 set throttle_boost = 5
 set throttle_boost_cutoff = 15
-set p_pitch = 37
-set i_pitch = 64
-set d_pitch = 27
+set p_pitch = 47
+set i_pitch = 84
+set d_pitch = 46
 set f_pitch = 125
-set p_roll = 35
-set i_roll = 60
-set d_roll = 23
+set p_roll = 45
+set i_roll = 80
+set d_roll = 40
 set f_roll = 120
-set p_yaw = 35
-set i_yaw = 60
+set p_yaw = 45
+set i_yaw = 80
 set d_yaw = 0
 set f_yaw = 120
 set angle_level_strength = 50
@@ -972,8 +971,8 @@ set abs_control_error_limit = 20
 set abs_control_cutoff = 11
 set use_integrated_yaw = OFF
 set integrated_yaw_relax = 200
-set d_min_roll = 21
-set d_min_pitch = 23
+set d_min_roll = 30
+set d_min_pitch = 34
 set d_min_yaw = 0
 set d_max_gain = 37
 set d_max_advance = 20
@@ -998,13 +997,13 @@ set dyn_idle_i_gain = 50
 set dyn_idle_d_gain = 50
 set dyn_idle_max_increase = 150
 set level_race_mode = OFF
-set simplified_pids_mode = OFF
+set simplified_pids_mode = RPY
 set simplified_master_multiplier = 100
 set simplified_i_gain = 100
-set simplified_d_gain = 70
-set simplified_pi_gain = 70
+set simplified_d_gain = 100
+set simplified_pi_gain = 100
 set simplified_dmax_gain = 100
-set simplified_feedforward_gain = 70
+set simplified_feedforward_gain = 100
 set simplified_pitch_d_gain = 100
 set simplified_pitch_pi_gain = 100
 set simplified_dterm_filter = ON
@@ -1017,8 +1016,8 @@ rateprofile 0
 
 # rateprofile 0
 set rateprofile_name = -
-set thr_mid = 50
-set thr_expo = 50
+set thr_mid = 100
+set thr_expo = 20
 set rates_type = BETAFLIGHT
 set quickrates_rc_expo = OFF
 set roll_rc_rate = 100
