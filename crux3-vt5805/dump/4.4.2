@@ -197,7 +197,6 @@ feature -AIRMODE
 feature -RX_SPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
-feature SOFTSERIAL
 feature TELEMETRY
 feature LED_STRIP
 feature OSD
@@ -207,9 +206,8 @@ feature ANTI_GRAVITY
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 0 0 115200 57600 0 115200
+serial 0 8192 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
-serial 30 8192 115200 57600 0 115200
 
 # mixer
 mixer QUADX
@@ -425,11 +423,11 @@ vtxtable powervalues 25 100 200 400 600
 vtxtable powerlabels 25 100 200 400 600
 
 # vtx
-vtx 0 0 0 0 0 900 900
-vtx 1 0 0 0 0 900 900
-vtx 2 0 0 0 0 900 900
-vtx 3 0 0 0 0 900 900
-vtx 4 0 0 0 0 900 900
+vtx 0 4 0 0 1 900 1100
+vtx 1 4 0 0 2 1100 1400
+vtx 2 4 0 0 3 1400 1575
+vtx 3 4 0 0 4 1575 1875
+vtx 4 4 0 0 5 1875 2100
 vtx 5 0 0 0 0 900 900
 vtx 6 0 0 0 0 900 900
 vtx 7 0 0 0 0 900 900
@@ -801,7 +799,7 @@ set pwr_on_arm_grace = 5
 set enable_stick_arming = OFF
 set vtx_band = 5
 set vtx_channel = 1
-set vtx_power = 1
+set vtx_power = 3
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_softserial_alt = OFF
 set vtx_freq = 5658
