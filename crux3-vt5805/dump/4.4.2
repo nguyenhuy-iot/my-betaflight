@@ -348,7 +348,7 @@ mode_color 6 7 6
 mode_color 6 8 0
 mode_color 6 9 0
 mode_color 6 10 0
-mode_color 7 0 3
+mode_color 7 0 9
 
 # aux
 aux 0 0 0 1700 2100 0 0
@@ -356,7 +356,7 @@ aux 1 1 1 900 1300 0 0
 aux 2 2 1 1300 1700 0 0
 aux 3 6 2 1300 1700 0 0
 aux 4 13 2 1700 2100 0 0
-aux 5 15 3 900 1450 0 0
+aux 5 15 5 900 1200 0 0
 aux 6 35 2 1700 2100 0 0
 aux 7 0 0 900 900 0 0
 aux 8 0 0 900 900 0 0
@@ -373,8 +373,8 @@ aux 18 0 0 900 900 0 0
 aux 19 0 0 900 900 0 0
 
 # adjrange
-adjrange 0 0 0 900 900 0 0 0 0
-adjrange 1 0 0 900 900 0 0 0 0
+adjrange 0 0 3 900 1500 12 3 0 0
+adjrange 1 0 3 1500 2100 12 3 0 0
 adjrange 2 0 0 900 900 0 0 0 0
 adjrange 3 0 0 900 900 0 0 0 0
 adjrange 4 0 0 900 900 0 0 0 0
@@ -438,9 +438,9 @@ vtx 9 0 0 0 0 900 900
 rxfail 0 a
 rxfail 1 a
 rxfail 2 a
-rxfail 3 a
+rxfail 3 h
 rxfail 4 h
-rxfail 5 h
+rxfail 5 s 1100
 rxfail 6 h
 rxfail 7 h
 rxfail 8 h
@@ -471,8 +471,8 @@ set gyro_overflow_detect = ALL
 set yaw_spin_recovery = AUTO
 set yaw_spin_threshold = 1950
 set gyro_to_use = FIRST
-set dyn_notch_count = 1
-set dyn_notch_q = 500
+set dyn_notch_count = 3
+set dyn_notch_q = 300
 set dyn_notch_min_hz = 120
 set dyn_notch_max_hz = 600
 set gyro_lpf1_dyn_min_hz = 0
@@ -523,7 +523,7 @@ set max_throttle = 2000
 set min_command = 1000
 set dshot_idle_value = 600
 set dshot_burst = AUTO
-set dshot_bidir = ON
+set dshot_bidir = OFF
 set dshot_edt = OFF
 set dshot_bitbang = ON
 set dshot_bitbang_timer = AUTO
@@ -535,7 +535,7 @@ set motor_poles = 12
 set motor_output_reordering = 0,1,2,3,4,5,6,7
 set thr_corr_value = 0
 set thr_corr_angle = 800
-set failsafe_delay = 15
+set failsafe_delay = 30
 set failsafe_off_delay = 10
 set failsafe_throttle = 1000
 set failsafe_switch_mode = STAGE1
@@ -712,7 +712,7 @@ set osd_vtx_channel_pos = 2123
 set osd_crosshairs_pos = 2285
 set osd_ah_sbar_pos = 206
 set osd_ah_pos = 2158
-set osd_current_pos = 2434
+set osd_current_pos = 2433
 set osd_mah_drawn_pos = 234
 set osd_wh_drawn_pos = 234
 set osd_motor_diag_pos = 234
@@ -735,8 +735,8 @@ set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
 set osd_warnings_pos = 14633
 set osd_avg_cell_voltage_pos = 2402
-set osd_pit_ang_pos = 234
-set osd_rol_ang_pos = 234
+set osd_pit_ang_pos = 2082
+set osd_rol_ang_pos = 2102
 set osd_battery_usage_pos = 234
 set osd_disarmed_pos = 234
 set osd_nheading_pos = 234
@@ -752,8 +752,8 @@ set osd_core_temp_pos = 2134
 set osd_stick_overlay_left_pos = 234
 set osd_stick_overlay_right_pos = 234
 set osd_stick_overlay_radio_mode = 2
-set osd_rate_profile_name_pos = 234
-set osd_pid_profile_name_pos = 234
+set osd_rate_profile_name_pos = 2455
+set osd_pid_profile_name_pos = 402
 set osd_profile_name_pos = 234
 set osd_rcchannels_pos = 234
 set osd_camera_frame_pos = 35
@@ -882,9 +882,9 @@ set box_user_2_name = -
 set box_user_3_name = -
 set box_user_4_name = -
 
-profile 1
+profile 2
 
-# profile 1
+# profile 2
 set profile_name = -
 set dterm_lpf1_dyn_min_hz = 75
 set dterm_lpf1_dyn_max_hz = 150
@@ -922,16 +922,16 @@ set pidsum_limit_yaw = 400
 set yaw_lowpass_hz = 100
 set throttle_boost = 5
 set throttle_boost_cutoff = 15
-set p_pitch = 47
-set i_pitch = 84
-set d_pitch = 46
+set p_pitch = 56
+set i_pitch = 45
+set d_pitch = 34
 set f_pitch = 125
-set p_roll = 45
-set i_roll = 80
-set d_roll = 40
+set p_roll = 53
+set i_roll = 43
+set d_roll = 30
 set f_roll = 120
-set p_yaw = 45
-set i_yaw = 80
+set p_yaw = 53
+set i_yaw = 43
 set d_yaw = 0
 set f_yaw = 120
 set angle_level_strength = 50
@@ -946,12 +946,12 @@ set abs_control_error_limit = 20
 set abs_control_cutoff = 11
 set use_integrated_yaw = OFF
 set integrated_yaw_relax = 200
-set d_min_roll = 30
-set d_min_pitch = 34
+set d_min_roll = 22
+set d_min_pitch = 25
 set d_min_yaw = 0
 set d_max_gain = 37
 set d_max_advance = 20
-set motor_output_limit = 100
+set motor_output_limit = 90
 set auto_profile_cell_count = 0
 set launch_control_mode = NORMAL
 set launch_trigger_allow_reset = ON
@@ -972,11 +972,11 @@ set dyn_idle_i_gain = 50
 set dyn_idle_d_gain = 50
 set dyn_idle_max_increase = 150
 set level_race_mode = OFF
-set simplified_pids_mode = RPY
+set simplified_pids_mode = OFF
 set simplified_master_multiplier = 100
-set simplified_i_gain = 100
-set simplified_d_gain = 100
-set simplified_pi_gain = 100
+set simplified_i_gain = 45
+set simplified_d_gain = 75
+set simplified_pi_gain = 120
 set simplified_dmax_gain = 100
 set simplified_feedforward_gain = 100
 set simplified_pitch_d_gain = 100
@@ -990,14 +990,14 @@ set tpa_breakpoint = 1350
 rateprofile 0
 
 # rateprofile 0
-set rateprofile_name = -
+set rateprofile_name = Normal
 set thr_mid = 50
 set thr_expo = 0
 set rates_type = BETAFLIGHT
 set quickrates_rc_expo = OFF
-set roll_rc_rate = 100
-set pitch_rc_rate = 100
-set yaw_rc_rate = 80
+set roll_rc_rate = 90
+set pitch_rc_rate = 90
+set yaw_rc_rate = 70
 set roll_expo = 30
 set pitch_expo = 30
 set yaw_expo = 0
