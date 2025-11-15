@@ -226,6 +226,8 @@ feature -AIRMODE
 feature -RX_SPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
+feature SERVO_TILT
+feature TELEMETRY
 feature OSD
 feature AIRMODE
 feature RX_SPI
@@ -395,7 +397,7 @@ mode_color 7 0 3
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 900 1300 0 0
 aux 2 2 1 1300 1700 0 0
-aux 3 13 3 1700 2100 0 0
+aux 3 13 2 1200 1600 0 0
 aux 4 35 2 1700 2100 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
@@ -575,7 +577,7 @@ set rx_min_usec = 885
 set rx_max_usec = 2115
 set serialrx_halfduplex = OFF
 set msp_override_channels_mask = 0
-set rx_spi_protocol = FRSKY_X
+set rx_spi_protocol = FRSKY_D
 set rx_spi_bus = 3
 set rx_spi_led_inversion = ON
 set adc_device = 1
@@ -939,9 +941,9 @@ set displayport_max7456_wht = 2
 set esc_sensor_halfduplex = OFF
 set esc_sensor_current_offset = 0
 set frsky_spi_autobind = OFF
-set frsky_spi_tx_id = 124,6,0
-set frsky_spi_offset = -33
-set frsky_spi_bind_hop_data = 5,122,4,121,3,120,2,119,1,118,1,117,234,116,233,115,232,114,231,113,230,112,229,111,228,110,227,109,226,108,225,107,224,106,223,105,222,104,221,103,221,102,219,101,218,100,217,0,0,0
+set frsky_spi_tx_id = 104,23,1
+set frsky_spi_offset = -16
+set frsky_spi_bind_hop_data = 0,30,60,91,120,150,180,210,5,35,65,95,125,155,185,215,10,40,70,100,130,160,190,221,15,45,75,105,135,165,195,225,20,50,80,110,140,170,200,230,25,55,85,115,145,175,205,0,0,0
 set frsky_x_rx_num = 0
 set frsky_spi_a1_source = VBAT
 set cc2500_spi_chip_detect = OFF
@@ -1041,7 +1043,7 @@ set crash_recovery_rate = 100
 set crash_limit_yaw = 200
 set crash_recovery = OFF
 set iterm_rotation = OFF
-set iterm_relax = RP_INC
+set iterm_relax = RP
 set iterm_relax_type = SETPOINT
 set iterm_relax_cutoff = 15
 set iterm_windup = 85
@@ -1055,18 +1057,18 @@ set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_debug_axis = ROLL
 set acro_trainer_gain = 75
-set p_pitch = 47
-set i_pitch = 81
+set p_pitch = 37
+set i_pitch = 60
 set d_pitch = 41
-set f_pitch = 125
-set p_roll = 41
-set i_roll = 77
-set d_roll = 39
-set f_roll = 89
-set p_yaw = 45
-set i_yaw = 81
+set f_pitch = 99
+set p_roll = 35
+set i_roll = 57
+set d_roll = 36
+set f_roll = 95
+set p_yaw = 35
+set i_yaw = 57
 set d_yaw = 0
-set f_yaw = 89
+set f_yaw = 95
 set angle_level_strength = 50
 set horizon_level_strength = 50
 set horizon_transition = 75
@@ -1079,8 +1081,8 @@ set abs_control_error_limit = 20
 set abs_control_cutoff = 11
 set use_integrated_yaw = OFF
 set integrated_yaw_relax = 200
-set d_min_roll = 0
-set d_min_pitch = 0
+set d_min_roll = 27
+set d_min_pitch = 30
 set d_min_yaw = 0
 set d_max_gain = 37
 set d_max_advance = 20
@@ -1107,11 +1109,11 @@ set dyn_idle_max_increase = 150
 set level_race_mode = OFF
 set simplified_pids_mode = RPY
 set simplified_master_multiplier = 100
-set simplified_i_gain = 100
-set simplified_d_gain = 100
-set simplified_pi_gain = 100
+set simplified_i_gain = 90
+set simplified_d_gain = 90
+set simplified_pi_gain = 80
 set simplified_dmax_gain = 100
-set simplified_feedforward_gain = 100
+set simplified_feedforward_gain = 80
 set simplified_pitch_d_gain = 100
 set simplified_pitch_pi_gain = 100
 set simplified_dterm_filter = ON
