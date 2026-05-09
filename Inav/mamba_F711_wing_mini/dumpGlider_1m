@@ -31,8 +31,8 @@ timer_output_mode 13 AUTO
 servo 0 1000 2000 1500 100
 servo 1 1000 2000 1500 -100
 servo 2 1000 2000 1500 -100
-servo 3 900 2100 1500 100
-servo 4 900 2100 1500 -100
+servo 3 1000 2000 1500 100
+servo 4 1000 2000 1500 -100
 servo 5 1000 2000 1500 100
 servo 6 1000 2000 1500 100
 servo 7 1000 2000 1500 100
@@ -159,7 +159,7 @@ map AETR
 serial 20 1 115200 115200 0 115200
 serial 0 64 115200 115200 0 115200
 serial 1 2 115200 57600 0 115200
-serial 2 0 115200 115200 0 115200
+serial 2 4096 115200 115200 0 115200
 serial 3 1 115200 115200 0 115200
 serial 4 0 115200 115200 0 115200
 serial 5 0 115200 115200 0 115200
@@ -363,13 +363,13 @@ mode_color 6 8 1
 aux 0 0 0 1700 2100
 aux 1 1 1 900 1250
 aux 2 2 1 1300 1700
-aux 3 34 5 1700 2100
-aux 4 60 3 1700 2100
-aux 5 0 0 900 900
-aux 6 0 0 900 900
-aux 7 0 0 900 900
-aux 8 0 0 900 900
-aux 9 0 0 900 900
+aux 3 53 2 1300 1700
+aux 4 10 2 1700 2100
+aux 5 37 3 1700 2100
+aux 6 36 4 900 1050
+aux 7 13 6 1700 2100
+aux 8 13 4 900 1050
+aux 9 60 5 1900 2100
 aux 10 0 0 900 900
 aux 11 0 0 900 900
 aux 12 0 0 900 900
@@ -563,39 +563,39 @@ wp 118 0 0 0 0 0 0 0 0
 wp 119 0 0 0 0 0 0 0 0
 
 # OSD [osd_layout]
-osd_layout 0 0 23 0 V
-osd_layout 0 1 12 0 V
-osd_layout 0 2 0 0 H
-osd_layout 0 3 8 6 H
+osd_layout 0 0 2 0 V
+osd_layout 0 1 2 4 H
+osd_layout 0 2 0 0 V
+osd_layout 0 3 8 6 V
 osd_layout 0 4 8 6 H
 osd_layout 0 5 23 8 H
-osd_layout 0 6 23 9 H
+osd_layout 0 6 23 11 V
 osd_layout 0 7 13 12 V
 osd_layout 0 8 20 2 H
-osd_layout 0 9 1 2 V
-osd_layout 0 10 8 6 H
-osd_layout 0 11 2 3 V
-osd_layout 0 12 1 4 V
-osd_layout 0 13 23 1 H
-osd_layout 0 14 0 11 V
-osd_layout 0 15 1 0 V
+osd_layout 0 9 6 12 V
+osd_layout 0 10 11 0 V
+osd_layout 0 11 19 12 V
+osd_layout 0 12 7 6 H
+osd_layout 0 13 18 11 V
+osd_layout 0 14 13 1 V
+osd_layout 0 15 7 11 V
 osd_layout 0 16 2 10 H
 osd_layout 0 17 2 11 H
 osd_layout 0 18 2 12 H
 osd_layout 0 19 15 1 H
-osd_layout 0 20 18 12 H
-osd_layout 0 21 0 12 H
-osd_layout 0 22 14 11 H
-osd_layout 0 23 1 1 H
+osd_layout 0 20 2 2 V
+osd_layout 0 21 18 2 V
+osd_layout 0 22 15 4 V
+osd_layout 0 23 13 11 V
 osd_layout 0 24 12 2 H
-osd_layout 0 25 23 5 H
+osd_layout 0 25 23 5 V
 osd_layout 0 26 24 7 H
 osd_layout 0 27 3 5 H
-osd_layout 0 28 23 11 V
+osd_layout 0 28 23 11 H
 osd_layout 0 29 23 12 H
-osd_layout 0 30 1 13 V
+osd_layout 0 30 2 3 V
 osd_layout 0 31 0 10 H
-osd_layout 0 32 12 1 H
+osd_layout 0 32 2 11 V
 osd_layout 0 33 6 2 H
 osd_layout 0 34 18 2 H
 osd_layout 0 35 1 5 H
@@ -620,11 +620,7 @@ osd_layout 0 53 12 1 H
 osd_layout 0 54 12 1 H
 osd_layout 0 55 1 8 H
 osd_layout 0 56 2 12 H
-osd_layout 0 57 2 12 H
-osd_layout 0 58 2 12 H
-osd_layout 0 59 2 12 H
-osd_layout 0 60 2 12 H
-osd_layout 0 61 2 12 H
+osd_layout 0 57 2 12 
 osd_layout 0 62 2 10 H
 osd_layout 0 63 2 11 H
 osd_layout 0 64 2 12 H
@@ -649,7 +645,7 @@ osd_layout 0 82 2 12 H
 osd_layout 0 83 2 12 H
 osd_layout 0 84 2 12 H
 osd_layout 0 85 23 1 H
-osd_layout 0 86 19 2 H
+osd_layout 0 86 24 0 V
 osd_layout 0 87 19 3 H
 osd_layout 0 88 19 4 H
 osd_layout 0 89 19 5 H
@@ -668,14 +664,14 @@ osd_layout 0 101 12 5 H
 osd_layout 0 102 12 6 H
 osd_layout 0 103 12 7 H
 osd_layout 0 104 0 0 H
-osd_layout 0 105 3 5 H
+osd_layout 0 105 7 0 V
 osd_layout 0 106 1 2 H
 osd_layout 0 107 1 3 H
 osd_layout 0 108 2 12 H
-osd_layout 0 109 23 12 H
+osd_layout 0 109 2 1 V
 osd_layout 0 110 23 10 H
 osd_layout 0 111 24 9 H
-osd_layout 0 112 24 10 H
+osd_layout 0 112 21 1 V
 osd_layout 0 113 1 1 H
 osd_layout 0 114 1 2 H
 osd_layout 0 115 1 3 H
@@ -1142,13 +1138,7 @@ osd_layout 3 74 2 12 H
 osd_layout 3 75 2 12 H
 osd_layout 3 76 2 12 H
 osd_layout 3 77 2 12 H
-osd_layout 3 78 0 0 H
-osd_layout 3 79 2 12 H
-osd_layout 3 80 2 12 H
-osd_layout 3 81 2 12 H
-osd_layout 3 82 2 12 H
-osd_layout 3 83 2 12 H
-osd_layout 3 84 2 12 H
+osd_layout 3 78 0 0 Hyout 3 84 2 12 H
 osd_layout 3 85 23 1 H
 osd_layout 3 86 19 2 H
 osd_layout 3 87 19 3 H
@@ -1233,21 +1223,21 @@ osd_layout 3 165 0 0 H
 osd_layout 3 166 0 0 H
 
 # Programming: logic
-logic 0 0 -1 0 0 0 0 0 0
-logic 1 0 -1 0 0 0 0 0 0
-logic 2 0 -1 0 0 0 0 0 0
-logic 3 0 -1 0 0 0 0 0 0
-logic 4 0 -1 0 0 0 0 0 0
+logic 0 1 -1 2 1 9 0 800 0
+logic 1 1 -1 2 1 9 0 1599 0
+logic 2 1 -1 2 1 9 0 1699 0
+logic 3 1 -1 2 1 9 0 1799 0
+logic 4 1 -1 2 1 9 0 1899 0
 logic 5 0 -1 0 0 0 0 0 0
 logic 6 0 -1 0 0 0 0 0 0
 logic 7 0 -1 0 0 0 0 0 0
 logic 8 0 -1 0 0 0 0 0 0
 logic 9 0 -1 0 0 0 0 0 0
-logic 10 0 -1 0 0 0 0 0 0
-logic 11 0 -1 0 0 0 0 0 0
-logic 12 0 -1 0 0 0 0 0 0
-logic 13 0 -1 0 0 0 0 0 0
-logic 14 0 -1 0 0 0 0 0 0
+logic 10 1 0 25 0 1 0 0 0
+logic 11 1 1 25 0 2 0 0 0
+logic 12 1 2 25 0 3 0 0 0
+logic 13 1 3 25 0 4 0 0 0
+logic 14 1 4 25 0 5 0 0 0
 logic 15 0 -1 0 0 0 0 0 0
 logic 16 0 -1 0 0 0 0 0 0
 logic 17 0 -1 0 0 0 0 0 0
@@ -1342,10 +1332,10 @@ set dynamic_gyro_notch_3d_q = 200
 set setpoint_kalman_enabled = ON
 set setpoint_kalman_q = 100
 set init_gyro_cal = ON
-set gyro_zero_x = 27
-set gyro_zero_y = -3
-set gyro_zero_z = -10
-set ins_gravity_cmss =  981.116
+set gyro_zero_x = 25
+set gyro_zero_y = -4
+set gyro_zero_z = -7
+set ins_gravity_cmss =  966.292
 set gyro_adaptive_filter_target =  3.500
 set gyro_adaptive_filter_min_hz = 20
 set gyro_adaptive_filter_max_hz = 150
@@ -1395,7 +1385,7 @@ set receiver_type = SERIAL
 set min_check = 1100
 set max_check = 1900
 set rssi_source = AUTO
-set rssi_channel = 0
+set rssi_channel = 16
 set rssi_min = 0
 set rssi_max = 100
 set sbus_sync_interval = 3000
@@ -1595,7 +1585,7 @@ set nav_fw_pitch2thr_threshold = 50
 set nav_fw_loiter_radius = 7500
 set fw_loiter_direction = RIGHT
 set nav_fw_cruise_speed = 0
-set nav_fw_control_smoothness = 2
+set nav_fw_control_smoothness = 7
 set nav_fw_land_dive_angle = 2
 set nav_fw_launch_velocity = 300
 set nav_fw_launch_accel = 1863
@@ -1760,7 +1750,7 @@ set vtx_smartaudio_early_akk_workaround = ON
 set vtx_smartaudio_alternate_softserial_method = ON
 set vtx_softserial_shortstop = OFF
 set vtx_smartaudio_stopbits = 2
-set vtx_band = 1
+set vtx_band = 5
 set vtx_channel = 1
 set vtx_power = 1
 set vtx_low_power_disarm = OFF
@@ -1838,11 +1828,11 @@ set fw_ff_pitch = 80
 set fw_p_roll = 15
 set fw_i_roll = 3
 set fw_d_roll = 7
-set fw_ff_roll = 50
+set fw_ff_roll = 123
 set fw_p_yaw = 50
 set fw_i_yaw = 0
 set fw_d_yaw = 20
-set fw_ff_yaw = 255
+set fw_ff_yaw = 47
 set fw_p_level = 20
 set fw_i_level = 5
 set fw_d_level = 75
@@ -1963,12 +1953,12 @@ mmix 1  1.000  0.000  0.000  0.000
 # Mixer: servo mixer
 smix reset
 
-smix 0 1 0 100 0 -1
-smix 1 2 0 100 0 -1
-smix 2 3 2 100 0 -1
-smix 3 4 1 100 0 -1
-smix 4 1 14 100 30 -1
-smix 5 2 14 -100 30 -1
+smix 0 1 0 80 0 -1
+smix 1 2 0 80 0 -1
+smix 2 3 2 80 0 -1
+smix 3 4 1 80 0 -1
+smix 4 1 16 40 0 -1
+smix 5 2 16 -40 0 -1
 
 # battery_profile
 battery_profile 1
@@ -1987,11 +1977,11 @@ set throttle_idle =  5.000
 set turtle_mode_power_factor = 55
 set failsafe_throttle = 1000
 set nav_mc_hover_thr = 1300
-set nav_fw_cruise_thr = 1400
+set nav_fw_cruise_thr = 1300
 set nav_fw_min_thr = 1200
 set nav_fw_max_thr = 1700
 set nav_fw_pitch2thr = 10
-set nav_fw_launch_thr = 1700
+set nav_fw_launch_thr = 1500
 set nav_fw_launch_idle_thr = 1000
 set limit_cont_current = 0
 set limit_burst_current = 0
